@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: rgb(235, 96, 119);
+    }
+
+    .center {
+        width: 60%;
+        padding: 50px;
+        border: 3px solid black;
+        border-radius: 30px;
+        position: relative;
+        transform: translate(50%, 50%);
+        left: -250px;
+        top: -30px;
+    }
+    .wrapper{
+        width: 100%;
+        min-width: 900px;
+        height: 90vh;
+    }
+
+    h1 {
+        font-size: 50px;
+        text-align: center;
+        color: white;
+        font-family: 'Cedarville Cursive', cursive;
+    }
+
+    div #flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    button {
+        position: absolute;
+        left: 35%;
+        width: 30%;
+        height: 20px;
+        padding: 15px;
+        border-radius: 20px;
+
+    }
+
+    button:hover {
+        transition: linear 0.5s;
+        cursor: grab;
+        background-color: black;
+        color: white;
+    }
+
+    input {
+        background-color: rgb(226, 226, 118);
+        height: 10px;
+        padding: 18px;
+        width: 300px;
+        border-radius: 20px;
+    }
+
+    #love {
+        color: red;
+        font-size: 40px;
+        /* font-family: 'Cedarville Cursive', cursive; */
+    }
+
+    .calc {
+        position: absolute;
+        top: 10px;
+        left: 40%;
+        bottom: 5px;
+    }
+
+    #content {
+        color: white;
+        border: 3px solid red;
+        border-radius: 20px;
+        box-shadow: 0 0 19px black, 0 0 7px black;
+        width: 500px;
+        height: 100px;
+        position: absolute;
+        left: 32%;
+        text-align: center;
+    }
+
+@media screen and (min-width:1201px) {
+    
+}
+</style>
+
+<body>
+    <marquee behavior="scroll" direction="alternate">
+        <h2> Check your love percentage &#9829;!</h2>
+    </marquee>
+    <div class="wrapper">
+        <div id="content">
+        </div>
+        <div class="center">
+            <h1>Love <br>Calculator</h1>
+            <div id="flex">
+                <input type="text" placeholder="Your Name" id="fn">
+                <img src="./Love_image-removebg-preview.png" alt="love image" width="100px" height="100px">
+                <input type="text" placeholder="Your Partner's Name" id="sn">
+            </div>
+            <button onclick="calculate()"> <span class="calc">CALCULATE &#9829;</span> </button>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            var firstName = fn.value
+            var secondName = sn.value
+            var randomNum = Math.round(Math.random() * 100)
+            if (fn.value == "" || sn.value == "") {
+                alert('Please, check your inputs well!')
+            } else if (randomNum < 30) {
+                content.innerHTML = `<h2> ${firstName}, your love  <span id="love">&#9829;</span> for ${secondName} is ${randomNum}%. <br> My Opinion: Breakfast Loading! </h2>`
+                fn.value = ""; sn.value = ""
+            }else if (randomNum < 50){
+                content.innerHTML = `<h2> ${firstName}, your love  <span id="love">&#9829;</span> for ${secondName} is ${randomNum}%. <br> My Opinion: Better sabi wetin you dey do!</h2>`
+                fn.value = ""; sn.value = ""
+            }else if(randomNum < 65){
+                content.innerHTML = `<h2> ${firstName}, your love  <span id="love">&#9829;</span> for ${secondName} is ${randomNum}%. <br> My Opinion: Hope dey here !</h2>`
+                fn.value = ""; sn.value = ""
+            }else if(randomNum < 85){
+                content.innerHTML = `<h2> ${firstName}, your love  <span id="love">&#9829;</span> for ${secondName} is ${randomNum}%. <br> My Opinion: Very Close!. Some little more energy abeg. </h2>`
+                fn.value = ""; sn.value = ""
+            }else if(randomNum < 91){
+                content.innerHTML = `<h2> ${firstName}, your love  <span id="love">&#9829;</span> for ${secondName} is ${randomNum}%. <br> My Opinion: I am really Jealous!</h2>`
+                fn.value = ""; sn.value = ""
+            }else if (randomNum <=100){
+                content.innerHTML = `<h2> ${firstName}, your love  <span id="love">&#9829;</span> for ${secondName} is ${randomNum}%. <br> My Opinion: Awwwnn!.Heavenly ordained. Perfecto!</h2>`
+                fn.value = ""; sn.value = ""
+            }
+             else {}
+
+
+        }
+    </script>
+</body>
+
+</html>
